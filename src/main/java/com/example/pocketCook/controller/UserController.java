@@ -1,7 +1,7 @@
 package com.example.pocketCook.controller;
 
 import com.example.pocketCook.dto.CreateUserDto;
-import com.example.pocketCook.dto.UserTestingDto;
+import com.example.pocketCook.dto.TestingUserDto;
 import com.example.pocketCook.entity.User;
 import com.example.pocketCook.service.UserService;
 import org.modelmapper.ModelMapper;
@@ -26,10 +26,10 @@ public class UserController {
     }
 
     @GetMapping
-    public List<UserTestingDto> getAllUsers() {
+    public List<TestingUserDto> getAllUsers() {
         List<User> users = userService.getAllUsers();
         return users.stream()
-                .map(this::convertToUserTestingDto)
+                .map(this::convertToTestingUserDto)
                 .collect(Collectors.toList());
     }
 
@@ -54,18 +54,18 @@ public class UserController {
     }
 
     @GetMapping("/getProfile/{userId}")
-    public List<UserTestingDto> getProfile(@PathVariable @Valid @Min(0) Long userId) {
+    public List<TestingUserDto> getProfile(@PathVariable @Valid @Min(0) Long userId) {
         List<User> users = userService.getProfile(userId);
         return users.stream()
-                .map(this::convertToUserTestingDto)
+                .map(this::convertToTestingUserDto)
                 .collect(Collectors.toList());
     }
 
     @GetMapping("/searchUser/{username}")
-    public List<UserTestingDto> searchUser(@PathVariable @Valid String username) {
+    public List<TestingUserDto> searchUser(@PathVariable @Valid String username) {
         List<User> users = userService.searchUser(username);
         return users.stream()
-                .map(this::convertToUserTestingDto)
+                .map(this::convertToTestingUserDto)
                 .collect(Collectors.toList());
     }
 
@@ -78,8 +78,8 @@ public class UserController {
 
     // internal conversion methods //
 
-    private UserTestingDto convertToUserTestingDto(User user) {
-        return modelMapper.map(user, UserTestingDto.class);
+    private TestingUserDto convertToTestingUserDto(User user) {
+        return modelMapper.map(user, TestingUserDto.class);
     }
 
     private CreateUserDto convertToCreateUserDto(User user) {
@@ -90,7 +90,7 @@ public class UserController {
         return modelMapper.map(createUserDto, User.class);
     }
 
-    private User convertUserTestingDtoToEntity(UserTestingDto userTestingDto) {
-        return modelMapper.map(userTestingDto, User.class);
+    private User convertTestingUserDtoToEntity(TestingUserDto testingUserDto) {
+        return modelMapper.map(testingUserDto, User.class);
     }
 }

@@ -5,7 +5,7 @@ import com.example.pocketCook.entity.RecipeIngredient;
 
 import java.util.Set;
 
-public class RecipeTestingDto {
+public class TestingRecipeDto {
 
     private Long recipeId;
 
@@ -13,7 +13,7 @@ public class RecipeTestingDto {
 
     private String description;
 
-    private UserTestingDto user;
+    private TestingUserDto user;
 
     private Set<RecipeIngredient> recipeIngredients;
 
@@ -21,9 +21,9 @@ public class RecipeTestingDto {
 
     private Set<RecipeStepDto> recipeSteps;
 
-    public RecipeTestingDto() { }
+    public TestingRecipeDto() { }
 
-    public RecipeTestingDto(Long recipeId, String name, String description, UserTestingDto user,
+    public TestingRecipeDto(Long recipeId, String name, String description, TestingUserDto user,
                             Set<RecipeIngredient> recipeIngredients, Set<RecipeComment> recipeComments, Set<RecipeStepDto> recipeSteps) {
         this.recipeId = recipeId;
         this.name = name;
@@ -58,11 +58,11 @@ public class RecipeTestingDto {
         this.description = description;
     }
 
-    public UserTestingDto getUser() {
+    public TestingUserDto getUser() {
         return user;
     }
 
-    public void setUser(UserTestingDto user) {
+    public void setUser(TestingUserDto user) {
         this.user = user;
     }
 

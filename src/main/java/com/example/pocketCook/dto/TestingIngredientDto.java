@@ -4,7 +4,7 @@ import com.example.pocketCook.entity.RecipeIngredient;
 
 import java.util.Set;
 
-public class IngredientTestingDto {
+public class TestingIngredientDto {
 
     private Long ingredientId;
 
@@ -12,9 +12,9 @@ public class IngredientTestingDto {
 
     private Set<RecipeIngredient> recipeIngredients;
 
-    public IngredientTestingDto() { }
+    public TestingIngredientDto() { }
 
-    public IngredientTestingDto(Long ingredientId, String name, Set<RecipeIngredient> recipeIngredients) {
+    public TestingIngredientDto(Long ingredientId, String name, Set<RecipeIngredient> recipeIngredients) {
         this.ingredientId = ingredientId;
         this.name = name;
         this.recipeIngredients = recipeIngredients;

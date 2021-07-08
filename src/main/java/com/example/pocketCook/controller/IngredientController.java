@@ -1,7 +1,7 @@
 package com.example.pocketCook.controller;
 
 import com.example.pocketCook.dto.CreateIngredientDto;
-import com.example.pocketCook.dto.IngredientTestingDto;
+import com.example.pocketCook.dto.TestingIngredientDto;
 import com.example.pocketCook.entity.Ingredient;
 import com.example.pocketCook.service.IngredientService;
 import org.modelmapper.ModelMapper;
@@ -39,10 +39,10 @@ public class IngredientController {
     }
 
     @GetMapping("/admin")
-    public List<IngredientTestingDto> getAllIngredientsWithData() {
+    public List<TestingIngredientDto> getAllIngredientsWithData() {
         List<Ingredient> ingredients = ingredientService.getAllIngredients();
         return ingredients.stream()
-                .map(this::convertToIngredientTestingDto)
+                .map(this::convertToTestingIngredientDto)
                 .collect(Collectors.toList());
     }
 
@@ -75,11 +75,11 @@ public class IngredientController {
         return modelMapper.map(createIngredientDto, Ingredient.class);
     }
 
-    private IngredientTestingDto convertToIngredientTestingDto(Ingredient ingredient) {
-        return modelMapper.map(ingredient, IngredientTestingDto.class);
+    private TestingIngredientDto convertToTestingIngredientDto(Ingredient ingredient) {
+        return modelMapper.map(ingredient, TestingIngredientDto.class);
     }
 
-    private Ingredient convertIngredientTestingDtoToEntity(IngredientTestingDto ingredientTestingDto) {
-        return modelMapper.map(ingredientTestingDto, Ingredient.class);
+    private Ingredient convertTestingIngredientDtoToEntity(TestingIngredientDto testingIngredientDto) {
+        return modelMapper.map(testingIngredientDto, Ingredient.class);
     }
 }

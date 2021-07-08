@@ -3,7 +3,7 @@ package com.example.pocketCook.dto;
 import com.example.pocketCook.entity.Ingredient;
 import com.example.pocketCook.entity.Recipe;
 
-public class RecipeIngredientTestingDto {
+public class TestingRecipeIngredientDto {
 
     private Long recipeIngredientId;
 
@@ -11,10 +11,10 @@ public class RecipeIngredientTestingDto {
 
     private Ingredient ingredient;
 
-    public RecipeIngredientTestingDto() {
+    public TestingRecipeIngredientDto() {
     }
 
-    public RecipeIngredientTestingDto(Long recipeIngredientId, Recipe recipe, Ingredient ingredient) {
+    public TestingRecipeIngredientDto(Long recipeIngredientId, Recipe recipe, Ingredient ingredient) {
         this.recipeIngredientId = recipeIngredientId;
         this.recipe = recipe;
         this.ingredient = ingredient;

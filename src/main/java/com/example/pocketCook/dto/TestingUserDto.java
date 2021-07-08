@@ -1,6 +1,6 @@
 package com.example.pocketCook.dto;
 
-public class UserTestingDto {
+public class TestingUserDto {
 
     private Long userId;
 
@@ -16,9 +16,9 @@ public class UserTestingDto {
 
     private Integer role;
 
-    public UserTestingDto() { }
+    public TestingUserDto() { }
 
-    public UserTestingDto(Long userId, String name, String surname, String username, String password, String email, Integer role) {
+    public TestingUserDto(Long userId, String name, String surname, String username, String password, String email, Integer role) {
         this.userId = userId;
         this.name = name;
         this.surname = surname;
