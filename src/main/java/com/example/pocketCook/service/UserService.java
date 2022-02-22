@@ -37,12 +37,12 @@ public class UserService {
     public void updateRole(Long id, Integer role) { userRepository.updateRole(id, role); }
 
     public List<User> getProfile(Long userId) {
-        return userRepository.getByUserId(userId);
+        return userRepository.getById(userId);
     }
 
     public List<User> searchUser(String username) { return userRepository.getByUsername(username); }
 
     public void deleteAccount(Long userId) {
-        userRepository.deleteByUserId(userId);
+        userRepository.deleteById(userId);
     }
 }

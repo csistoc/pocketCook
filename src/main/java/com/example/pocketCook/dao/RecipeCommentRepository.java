@@ -7,13 +7,13 @@ import java.util.List;
 
 public interface RecipeCommentRepository extends CrudRepository<RecipeComment, Long> {
 
-    List<RecipeComment> getByRecipeId(Integer recipeId);
+    List<RecipeComment> getByRecipe_Id(Long recipeId);
 
-    List<RecipeComment> getByUserId(Integer userId);
+    List<RecipeComment> getByUser_Id(Long userId);
 
-    void deleteByRecipeId(Integer recipeId);
+    //void deleteByRecipe_Id(Long recipeId);
 
-    void deleteByUserId(Integer userId);
+    //void deleteByUser_Id(Long userId);
 
-    void deleteByRecipeIdAndUserId(Integer recipeId, Integer userId);
+    //void deleteByRecipe_IdAndUser_Id(Long recipeId, Long userId);
 }

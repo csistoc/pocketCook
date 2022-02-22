@@ -9,8 +9,8 @@ public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "user_id")
-    private Long userId;
+    @Column(name = "id")
+    private Long id;
 
     @Column(name = "name")
     private String name;
@@ -34,14 +34,14 @@ public class User {
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "user")
     private Set<Recipe> recipes;
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "user")
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "user", fetch = FetchType.EAGER)
     private Set<RecipeComment> recipeComments;
 
     public User() { }
 
-    public User(Long userId, String name, String surname, String username, String password, String email,
+    public User(Long id, String name, String surname, String username, String password, String email,
                 Integer role, Set<Recipe> recipes, Set<RecipeComment> recipeComments) {
-        this.userId = userId;
+        this.id = id;
         this.name = name;
         this.surname = surname;
         this.username = username;
@@ -52,12 +52,12 @@ public class User {
         this.recipeComments = recipeComments;
     }
 
-    public Long getUserId() {
-        return userId;
+    public Long getId() {
+        return id;
     }
 
-    public void setUserId(Long userId) {
-        this.userId = userId;
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getName() {

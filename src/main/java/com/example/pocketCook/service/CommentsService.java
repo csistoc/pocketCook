@@ -17,15 +17,15 @@ public class CommentsService {
 
     public List<RecipeComment> getAllComments() { return (List<RecipeComment>) recipeCommentRepository.findAll(); }
 
-    public List<RecipeComment> getAllCommentsFromRecipe(Integer recipeId) { return recipeCommentRepository.getByRecipeId(recipeId); }
+    public List<RecipeComment> getAllCommentsFromRecipe(Long recipeId) { return recipeCommentRepository.getByRecipe_Id(recipeId); }
 
-    public List<RecipeComment> getAllCommentsByUser(Integer userId) { return recipeCommentRepository.getByUserId(userId); }
+    public List<RecipeComment> getAllCommentsByUser(Long userId) { return recipeCommentRepository.getByUser_Id(userId); }
 
     public void addComment(RecipeComment recipeComment) { recipeCommentRepository.save(recipeComment); }
 
-    public void deleteRecipeCommentsByRecipeId(Integer recipeId) { recipeCommentRepository.deleteByRecipeId(recipeId); }
+    //public void deleteRecipeCommentsByRecipeId(Long recipeId) { recipeCommentRepository.deleteByRecipe_Id(recipeId); }
 
-    public void deleteRecipeCommentsByUserId(Integer userId) { recipeCommentRepository.deleteByUserId(userId); }
+    //public void deleteRecipeCommentsByUserId(Long userId) { recipeCommentRepository.deleteByUser_Id(userId); }
 
-    public void deleteSpecificRecipeComment(Integer recipeId, Integer userId) { recipeCommentRepository.deleteByRecipeIdAndUserId(recipeId, userId); }
+    //public void deleteSpecificRecipeComment(Long recipeId, Long userId) { recipeCommentRepository.deleteByRecipe_IdAndUser_Id(recipeId, userId); }
 }

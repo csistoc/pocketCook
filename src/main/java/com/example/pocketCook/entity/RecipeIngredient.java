@@ -8,7 +8,7 @@ public class RecipeIngredient {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "recipe_ingredient_id")
+    @Column(name = "id")
     private Long recipeIngredientId;
 
     @ManyToOne

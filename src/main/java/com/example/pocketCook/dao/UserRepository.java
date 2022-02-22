@@ -29,7 +29,7 @@ public interface UserRepository extends CrudRepository<User, Long> {
 
     List<User> getByUsername(String username);
 
-    List<User> getByUserId(Long userId);
+    List<User> getById(Long id);
 
-    void deleteByUserId(Long userId);
+    void deleteById(Long id);
 }

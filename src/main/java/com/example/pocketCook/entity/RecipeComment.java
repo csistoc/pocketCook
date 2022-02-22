@@ -8,14 +8,14 @@ public class RecipeComment {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "recipe_comment_id")
+    @Column(name = "id")
     private Long recipeCommentId;
 
     @ManyToOne
     @JoinColumn(name = "recipe_id", nullable = false)
     private Recipe recipe;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id", nullable = false)
     private User user;
 

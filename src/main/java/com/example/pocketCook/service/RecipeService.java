@@ -41,7 +41,7 @@ public class RecipeService {
     public void addIngredientToRecipe(RecipeIngredient recipeIngredient) { recipeIngredientRepository.save(recipeIngredient); }
 
     public void deleteRecipe(Long recipeId) {
-        recipeRepository.deleteByRecipeId(recipeId);
+        recipeRepository.deleteById(recipeId);
     }
 
 

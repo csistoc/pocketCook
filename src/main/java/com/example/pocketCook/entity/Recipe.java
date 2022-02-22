@@ -9,8 +9,8 @@ public class Recipe {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "recipe_id")
-    private Long recipeId;
+    @Column(name = "id")
+    private Long id;
 
     @Column(name = "name")
     private String name;
@@ -33,9 +33,9 @@ public class Recipe {
 
     public Recipe() { }
 
-    public Recipe(Long recipeId, String name, String description, User user,
+    public Recipe(Long id, String name, String description, User user,
                   Set<RecipeIngredient> recipeIngredients, Set<RecipeComment> recipeComments, Set<RecipeStep> recipeSteps) {
-        this.recipeId = recipeId;
+        this.id = id;
         this.name = name;
         this.description = description;
         this.user = user;
@@ -44,12 +44,12 @@ public class Recipe {
         this.recipeSteps = recipeSteps;
     }
 
-    public Long getRecipeId() {
-        return recipeId;
+    public Long getId() {
+        return id;
     }
 
-    public void setRecipeId(Long recipeId) {
-        this.recipeId = recipeId;
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getName() {
